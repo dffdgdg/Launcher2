@@ -1,0 +1,27 @@
+﻿<Page x:Class="Launcher2.View.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Launcher2.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainPage" Background="{x:Null}">
+    <Grid>
+        <!--<Image  Grid.RowSpan="2" Source="/Assets/Resources/Menu.png" Stretch="Fill"/>-->
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Width="185" Margin="25,40">
+                <RadioButton Content="Все игры" IsChecked="True" Style="{StaticResource Context2}"  Cursor="Hand" Tag="2"/>
+                <RadioButton Content="Blizzard" Style="{StaticResource Context2}" Cursor="Hand" Tag="2"/>
+                <RadioButton Content="Activision" Style="{StaticResource Context2}" Tag="0" Foreground="#FFBDBDC3"/>
+                <RadioButton Content="Бесплатное" Style="{StaticResource Context2}" Tag="0"/>
+                <RadioButton Content="Мобильное"  Style="{StaticResource Context2}" Tag="0"/>
+            </StackPanel>
+            <TextBlock Text="Все игры" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" Margin="260,40,0,0"/>
+            <WrapPanel Margin="253,70,25,0">
+                <Button Style="{StaticResource OverWatch}" Margin="3"  Click="Button_Click" />
+                <Button Style="{StaticResource WOW}" Margin="3"   Click="Button_Click_1"/>
+            </WrapPanel>    
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,61 @@
+﻿<Window x:Class="Launcher2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Launcher2"
+        mc:Ignorable="d"
+        MinHeight="777" MinWidth="1000" d:Height="777" d:Width="2000" WindowStyle="None" Background="#FF15171E" Style="{StaticResource CustomWindowStyle}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="159"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image x:Name="Backg" Source="\Assets\Resources\Menu.png" HorizontalAlignment="Left" VerticalAlignment="Top" Height="1040" Width="2000" Grid.RowSpan="3" Grid.ColumnSpan="3"/>
+        <Grid Grid.RowSpan="3" Background="Transparent" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Margin="0,1,0,341" />
+        <RadioButton Style="{StaticResource MenuTabs}" Content="ИГРЫ" IsChecked="True"    Margin="107,10,0,0" FontSize="18" VerticalAlignment="Top" HorizontalAlignment="Left" Height="38" Width="57"  Grid.Row="1"/>
+        <RadioButton Style="{StaticResource MenuTabs}" Content="МАГАЗИН" Margin="191,10,0,0" FontSize="18" VerticalAlignment="Top" HorizontalAlignment="Left" Height="36" Width="100" Grid.Row="1" />
+        <Path  Stretch="Fill" Fill="White" Grid.Row="1" Width="15" Height="19" Margin="0,22.625,11.5,0" VerticalAlignment="Top" HorizontalAlignment="Right" Data="M16 1C10.31 1 5.68 5.63 5.68 11.321v7.158a3.844 3.844 0 0 0-3.07 3.76 3.841 3.841 0 0 0 3.838 3.836h4.021C10.791 28.843 13.147 31 16 31s5.209-2.157 5.53-4.925h4.022a3.841 3.841 0 0 0 3.837-3.837 3.844 3.844 0 0 0-3.068-3.76v-7.157C26.32 5.63 21.69 1 16 1zm0 27.097a2.674 2.674 0 0 1-2.589-2.022h5.178A2.674 2.674 0 0 1 16 28.097zm10.486-5.859c0 .515-.42.934-.934.934H6.448a.935.935 0 0 1 0-1.867h.683c.802 0 1.452-.65 1.452-1.452v-8.532c0-4.09 3.327-7.418 7.417-7.418s7.417 3.328 7.417 7.418v8.532c0 .801.65 1.452 1.452 1.452h.683c.515 0 .934.418.934.933z"/>
+        <Frame x:Name="mf" Source="/View/MainPage.xaml" NavigationUIVisibility="Hidden" Grid.Row="1" Navigated="mf_Navigated" Margin="1,128,0,0" Grid.RowSpan="2"/>
+        <ToggleButton x:Name="LogoButton" HorizontalAlignment="Left" Grid.Row="1" Style="{StaticResource Logo}" VerticalAlignment="Top" Margin="33,10,0,0" Click="Button_Click_1">
+        </ToggleButton>
+        <Grid Grid.RowSpan="5" Grid.Column="3" Width="137" x:Name="Grids">
+            <ToggleButton Style="{StaticResource Profile}" Background="Red"  Margin="15,31,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Button x:Name="ChatsAndGroups" Content="Чаты и группы" VerticalAlignment="Bottom" Style="{StaticResource CG}" FontSize="16" Height="40" Margin="12,0,85,25"/>
+            <ToggleButton x:Name="Opg" Grid.Column="3" Grid.Row="3" VerticalAlignment="Bottom" Margin="33,29" HorizontalAlignment="Right" Width="32" Height="32" Style="{StaticResource Arrowq}" Click="ToggleButton_Checked_1"/>
+        </Grid>
+        <RadioButton  x:Name="MainMenu" Grid.Row="1" Margin="25,0,0,31" Opacity="0.9" Height="64" Width="135" IsChecked="True" Click="MainMenu_Click"/>
+        <Border CornerRadius="10" Background="#FF313339" Grid.Row="1" Opacity="0.2" Margin="168,64,0,31" Height="64" >
+
+        </Border>
+        <Grid Grid.Row="1" Margin="168,0,0,31" Height="64" VerticalAlignment="Bottom" ClipToBounds="True">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" ClipToBounds="True" Background="Transparent">
+                <RadioButton x:Name="OWB" Style="{StaticResource OW}" Click="OWB_Click" Opacity="1"/>
+                <RadioButton x:Name="WOWB" Style="{StaticResource WOW1}" Click="WOWB_Click" Opacity="1"/>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="Menu1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="15,58,0,0" Width="266" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="Collapsed">
+            <Polygon Fill="#FF1A1C23" Stroke="#FF35373D" StrokeThickness="1" StrokeLineJoin="Round"
+                     Points=
+                     "0,8 0,320 265,320 265,8 37,8 29,0 21,8"/>
+            <StackPanel Orientation="Vertical" Margin="5,15,0,10" Width="253" HorizontalAlignment="Left">
+                <Button Style="{StaticResource Menu}" Content="Моя учётная запись" Height="30"/>
+                <Button Style="{StaticResource Menu}" Content="Настройки" Height="30"/>
+                <Button Style="{StaticResource Menu}" Content="Новинки" Height="30"/>
+                <Button Style="{StaticResource Menu}" Content="Демонастрация" Height="30"/>
+                <Rectangle Fill="#FF3F4147" Stroke="#FF3F4147" Height="1" Margin="7"/>
+                <Button Style="{StaticResource Menu}" Content="Отправить отзыв" Height="30"/>
+                <Button Style="{StaticResource Menu}" Content="Помощь" Height="30"/>
+                <Rectangle Fill="#FF3F4147" Stroke="#FF3F4147" Height="1" Margin="7"/>
+                <Button Style="{StaticResource Menu}" Content="Выйти" Height="30"/>
+                <Button Style="{StaticResource Menu}" Content="Выход" Height="30"/>
+                <Button Style="{StaticResource Menu}" Content="Сообщить о неполадке" Height="30"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
